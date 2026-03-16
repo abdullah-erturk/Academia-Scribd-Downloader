@@ -93,7 +93,7 @@ Attempts to fetch the original document file directly from external processing s
 4. Click **"Load unpacked"** and select the `academicpdf` folder.
 
 ---
-
+</details>
 <div align="center">
 
 Made with ❤️ by [Abdullah ERTÜRK](https://github.com/abdullah-erturk)
