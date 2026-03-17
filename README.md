@@ -31,24 +31,24 @@ This extension is designed for Chrome and Edge browsers. It's designed to facili
 
 ### Temel Özellikler
 
-#### 1. Akıllı Tarama (HQ Modu) 🛡️
-En gelişmiş indirme yöntemidir. Döküman üzerinde indirme kısıtlaması olsa dahi çalışır.
-- **Evrensel Tarama Motoru:** Her sayfayı dijital olarak yeniden işlemek için `html2canvas` kullanır.
-- **Tamamen Yerel Kayıt:** Tarama ve PDF oluşturma işlemleri doğrudan tarayıcınız içinde yapılır; hiçbir veriniz harici sunuculara gönderilmez ve herhangi bir dış servise bağımlı değildir.
-- **Ekrandan Bağımsız:** Ekran boyutunuz veya çözünürlüğünüz ne olursa olsun, sayfaları tam kalite ve boyutta yakalar.
-- **Otomatik Temizleme:** Tarama sırasında Outline çubukları, headerlar ve kayıt bantları gibi fazlalık ögeleri otomatik olarak gizler.
-- **Dipnot Koruma:** Sayfa sınırlarını akıllıca belirleyerek dipnotların ve sayfa altı metinlerin kesilmesini engeller.
+#### 1. Akıllı Tarama (HQ Motoru) 🛡️
+Eklentinin kalbidir; dökümanları sayfa sayfa işleyerek %100 yerel PDF oluşturur. Artık iki farklı moda sahiptir:
+- **Native HQ (Orijinal Çözünürlük):** [YENİ] Sayfaları ekran görüntüsü olarak değil, sunucudaki orijinal görsel (Scribd için ham imaj, Academia için yüksek çözünürlüklü SVG) verilerini çekerek kaydeder. Cam gibi netlik sunar.
+- **Uyumlu Tarama (Garantili Mod):** [YENİ] En karmaşık sayfa yapılarında bile hata payı bırakmayan, yüksek kaliteli dijital ekran yakalama yöntemidir.
 
-#### 2. Orijinal PDF (API Modu) ⚡
-Dökümanın orijinal vektörel dosyasını harici API sunucuları (downacademia.net, scribd.vdownloaders.com ve ilide.info vb.) üzerinden çekmeye çalışır.
+#### 2. Güvenlik ve Kararlılık Sistemleri 🦾
+- **Uyanık Tutma (Keepalive):** Çok sayfalı (500+ sayfa) dokümanlarda tarayıcının veya eklentinin uyku moduna geçmesini engelleyerek işlemin yarıda kesilmesini önler.
+- **Görünürlük Koruması:** Tarama sırasında başka bir sekmeye geçtiğinizde işlemi otomatik duraklatır ve geri döndüğünüzde devam eder; bu sayede hatalı sayfa oluşumunu engeller.
+- **Isınma Sistemi:** Tarama başlamadan önce içeriği otomatik "ısıtarak" eksik yüklenen sayfa sorununu ortadan kaldırır.
+
+#### 3. Orijinal PDF (API Modu) ⚡
+Dökümanın orijinal vektörel dosyasını harici API sunucuları (downacademia.net, scribd.vdownloaders.com vb.) üzerinden çekmeye çalışır.
 - **Hızlı İndirme:** Vektörel kaliteyi korur ve saniyeler içinde iner.
-- **Servis Bağımlılığı:** Bu özellik, bahsedilen harici servislerin aktif ve dökümana erişebilir olmasına bağlıdır. Eğer harici sunucular kapalıysa veya dökümana ulaşamazlarsa bu buton hata verecektir.
-- **Kesin Çözüm Vurgusu:** Harici servislerin çalışmadığı veya dökümanı bulamadığı durumlarda, eklentinin kendi motorunu kullanan ve hiçbir sunucuya bağımlı olmayan **"Akıllı Tarama (HQ)"** yöntemini kullanmanız %100 kesin çözümdür.
+- **Alternatif:** Eğer API modunda hata alırsanız veya dosya bulunamazsa, **"Akıllı Tarama"** modları %100 kesin çözümdür.
 
-#### 3. Premium Arayüz Kullanımı 🎨
+#### 4. Premium Arayüz Kullanımı 🎨
 - **Cam Tasarım (Glassmorphism):** Modern, şeffaf ve göz yormayan karanlık mod destekli arayüz.
-- **Panel Küçültme:** Küçük ekranlarda yer kazanmak için paneli tek tıkla (`−` butonu ile) minimize edebilirsiniz.
-- **Dil Seçeneği:** Türkçe ve İngilizce tam destek.
+- **Panel Seçenekleri:** Panel küçültme, dil seçimi ve anlık ilerleme takibi.
 
 ### Kurulum ve Kullanım
 
@@ -67,23 +67,24 @@ Dökümanın orijinal vektörel dosyasını harici API sunucuları (downacademia
 
 ### Key Features
 
-#### 1. Smart Scan (HQ Mode) 🛡️
-The most advanced method to save documents, even those with restricted download permissions.
-- **Universal Capture Engine:** Uses `html2canvas` to digitally render each page.
-- **Fully Local & Private:** The entire process happens directly within your browser. No data is sent to external servers, making it 100% independent of third-party availability.
-- **Viewport Independent:** Captures full pages regardless of your screen size or resolution.
-- **Auto-Cleanup:** Automatically hides persistent UI elements (Outline bars, headers, signup banners) during capture to ensure a clean PDF.
-- **Footnote Preservation:** Ensures document boundaries are respected, saving 100% of the content including bottom footnotes.
+#### 1. Smart Scan (HQ Engine) 🛡️
+The core of the extension, creating 100% local PDFs by processing pages individually. Now features two modes:
+- **Native HQ (Original Quality):** [NEW] Captures original high-resolution files (raw images for Scribd, high-res SVGs for Academia) instead of just taking screenshots. Provides crystal-clear quality.
+- **Compatible Scan (Guaranteed Mod):** [NEW] A highly reliable digital capture method that ensures no errors even in the most complex document layouts.
 
-#### 2. Original PDF (API Mode) ⚡
-Attempts to fetch the original document file directly from external processing servers (like downacademia.net, scribd.vdownloaders.com, or ilide.info).
-- **Direct Download:** Fast and preserves the original document quality (vector-based).
-- **Service Dependency:** This feature relies on the availability of external API services. If these third-party servers are offline or cannot located the document, this mode will fail.
-- **Reliable Fallback:** In case of external server failure, using **"Smart Scan (HQ)"** is the 100% reliable alternative as it uses the extension's internal engine and does not depend on any external services.
+#### 2. Stability & Protection Systems 🦾
+- **Keepalive Mechanism:** Prevents the browser or extension from entering sleep mode during long scans (500+ pages), ensuring background processes never suspend.
+- **Visibility Guard:** Automatically pauses the scan when you switch tabs and resumes when you return, preventing rendering glitches.
+- **Pre-load Warmup:** Automatically "warms up" the document content before scanning to eliminate blank page issues.
 
-#### 3. Premium UI/UX 🎨
-- **Glassmorphism Design:** A modern, sleek interface with blur effects and dark mode support.
-- **Minimize Toggle:** The overlay panel can be minimized to a small pill-sized header to save screen space on smaller devices.
+#### 3. Original PDF (API Mode) ⚡
+Attempts to fetch the original vector file via external API servers (downacademia.net, scribd.vdownloaders.com, etc.).
+- **Direct Download:** Fast and preserves original vector quality.
+- **Reliable Fallback:** If the API mode fails or the document is not found, the **"Smart Scan"** modes are the 100% reliable local alternative.
+
+#### 4. Premium UI/UX 🎨
+- **Glassmorphism Design:** A sleek, transparent interface with dark mode and blur effects.
+- **Dynamic Controls:** Progress tracking, language switching, and minimize toggle.
 
 ### Installation
 
