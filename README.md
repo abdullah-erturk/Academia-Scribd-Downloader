@@ -44,8 +44,9 @@ Arayüz, kullanım kolaylığı ve görsel ayrım için her indirme yöntemi iç
 
 #### 3. Kurulum ve Kullanım
 1. Bu depoyu indirin ve klasöre çıkartın.
-2. `chrome://extensions` adresine gidin ve **"Geliştirici Modu"**nu açın.
-3. **"Paketlenmiş öğe yükle"** butonuna basın ve `academicpdf` klasörünü seçin.
+2. `chrome://extensions` veya `edge://extensions` adresine gidin
+3. **"Geliştirici Modu"**nu açın.
+4. **"Paketlenmiş öğe yükle"** butonuna basın ve `academicpdf` klasörünü seçin.
 
 ---
 
@@ -70,7 +71,7 @@ Optimized with distinct color coding for better usability:
 
 #### 3. Installation
 1. Download and extract this repository.
-2. Navigate to `chrome://extensions`.
+2. Navigate to `chrome://extensions`or `edge://extensions`
 3. Enable **"Developer mode"**.
 4. Click **"Load unpacked"** and select the `academicpdf` folder.
 
