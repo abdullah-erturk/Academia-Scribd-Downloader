@@ -26,7 +26,7 @@ This extension is a professional tool for Chrome and Edge browsers. It is design
 [![Stable?](https://img.shields.io/badge/Release-v1.svg?style=flat)](https://github.com/abdullah-erturk/Academia-Scribd-Downloader/archive/refs/heads/main.zip)
 
 <details open>
-<summary><strong>🇹🇷 Türkçe Tanıtım</strong></summary>
+<summary><strong>Türkçe Tanıtım</strong></summary>
 
 ### Temel Özellikler
 
@@ -39,7 +39,6 @@ Arayüz, kullanım kolaylığı ve görsel ayrım için her indirme yöntemi iç
 
 #### 2. Akıllı Teknik Altyapı 🦾
 - **Semantik Arayüz:** Butonlardaki açıklama metinleri ("Orijinal görselleri çıkar" vb.) artık ana başlığın altında, daha okunaklı bir hiyerarşiyle yer alır.
-- **Sessiz Hata Yönetimi:** Tarayıcı konsolunda kirlilik yaratan "Hata" raporları temizlendi, eklentinin alternatif yöntemlere geçiş süreçleri sessiz loglama sistemine çekildi.
 - **Uyanık Tutma (Keepalive):** Uzun dökümanlarda tarayıcının uyku moduna geçmesini engelleyerek işlemin yarım kalmasını önler.
 - **Görünürlük Koruması:** Sekme değiştirdiğinizde işlemi duraklatır, geri döndüğünüzde kaldığı yerden hatasız devam eder.
 
@@ -48,15 +47,12 @@ Arayüz, kullanım kolaylığı ve görsel ayrım için her indirme yöntemi iç
 2. `chrome://extensions` adresine gidin ve **"Geliştirici Modu"**nu açın.
 3. **"Paketlenmiş öğe yükle"** butonuna basın ve `academicpdf` klasörünü seçin.
 
-> [!NOTE]
-> Geliştirici modunda yüklenen eklentilerde tarayıcı otomatik olarak **"Hataları topla"** seçeneğini aktif eder. Bu bir tarayıcı özelliğidir. Eklentimiz bu alanı temiz tutmak için log seviyelerini optimize etmiştir.
-
 ---
 
 </details>
 
 <details>
-<summary><strong>🇺🇸 English Description</strong></summary>
+<summary><strong>English Description</strong></summary>
 
 ### Key Features
 
@@ -69,7 +65,6 @@ Optimized with distinct color coding for better usability:
 
 #### 2. Robust Infrastructure 🦾
 - **Hierarchical UI:** Descriptive button text now sits neatly below the main title for improved readability.
-- **Silent Logging:** Console "Error" reports have been downgraded to warnings/logs to keep the browser environment clean.
 - **Keepalive Mechanism:** Prevents suspension during massive document exports (500+ pages).
 - **Visibility Guard:** Auto-pauses on tab switch to prevent rendering glitches.
 
