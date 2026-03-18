@@ -73,7 +73,7 @@ Optimized with distinct labeling for better usability:
 
 #### 3. Installation
 1. Download and extract this repository.
-2. Navigate to `chrome://extensions`or `edge://extensions`
+2. Navigate to `chrome://extensions` or `edge://extensions`
 3. Enable **"Developer mode"**.
 4. Click **"Load unpacked"** and select the `academicpdf` folder.
 
