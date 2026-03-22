@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html dir="auto" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Scribd Downloader</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
@@ -32,10 +32,16 @@
             width: 320px;
             margin: 0;
             padding: 20px;
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Inter', 'Noto Sans Arabic', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text-main);
             font-size: 14px;
+            line-height: 1.5;
+        }
+
+        body.rtl {
+            direction: rtl;
+            text-align: right;
         }
 
         .header {
@@ -88,14 +94,16 @@
             font-weight: 600;
             font-size: 11px;
             cursor: pointer;
-            padding: 4px 6px;
+            padding: 4px 8px;
             border-radius: 4px;
+            min-width: 36px;
+            text-align: center;
         }
 
         .lang-btn.active {
             background: var(--bg);
             color: var(--text-main);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .status-badge {
@@ -130,10 +138,15 @@
 
         .step-item {
             position: relative;
-            padding-left: 28px;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            padding-left: 32px;
+            margin-bottom: 14px;
+            line-height: 1.6;
             color: var(--text-main);
+        }
+
+        body.rtl .step-item {
+            padding-left: 0;
+            padding-right: 32px;
         }
 
         .step-item::before {
@@ -142,8 +155,8 @@
             position: absolute;
             left: 0;
             top: 2px;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             background: var(--border);
             color: var(--text-sub);
             border-radius: 50%;
@@ -154,6 +167,11 @@
             font-weight: 700;
         }
 
+        body.rtl .step-item::before {
+            left: auto;
+            right: 0;
+        }
+
         strong {
             color: var(--accent);
         }
@@ -162,10 +180,13 @@
             font-size: 11px;
             color: var(--text-sub);
             margin-bottom: 24px;
-            line-height: 1.4;
+            line-height: 1.5;
             display: block;
             font-style: italic;
-            text-align: justify;
+        }
+
+        body.rtl .tip {
+            text-align: right;
         }
 
         .footer {
@@ -176,84 +197,52 @@
         }
 
         .links {
-            display: flex !important;
-            gap: 8px !important;
-            justify-content: space-between !important;
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+        }
+
+        .github-btn,
+        .coffee-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            padding: 10px 4px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .github-btn {
-            flex: 1 !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            text-decoration: none;
             background: var(--github-bg);
             color: var(--github-text);
-            padding: 10px 4px !important;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 13px !important;
-            transition: all 0.2s ease;
-            white-space: nowrap !important;
-        }
-
-        .github-btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(0.85);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .github-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
         }
 
         .coffee-btn {
-            flex: 1 !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            text-decoration: none;
             background: #FF813F;
             color: white;
-            padding: 10px 4px !important;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 13px !important;
-            transition: all 0.2s ease;
-            white-space: nowrap !important;
         }
 
+        .github-btn:hover,
         .coffee-btn:hover {
             transform: translateY(-2px);
-            filter: brightness(0.85);
-            box-shadow: 0 4px 12px rgba(255, 129, 63, 0.3);
-        }
-
-        .coffee-btn span {
-            font-size: 18px;
-            line-height: 0;
+            filter: brightness(0.92);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .version {
-            display: none !important;
+            display: none;
         }
 
         @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
@@ -262,36 +251,48 @@
 
     <div class="header">
         <div class="brand">
-            <div class="logo"><img src="icons/icon32.png" width="24" height="24"></div>
+            <div class="logo">
+                <img src="icons/icon32.png" width="28" height="28" alt="Logo">
+            </div>
             <div class="title">
                 <h1 id="txt-title">Academia & Scribd</h1>
                 <p id="txt-subtitle">Academic Download Suite</p>
             </div>
         </div>
+
         <div class="lang-switch">
-            <button class="lang-btn active" id="btn-tr">TR</button>
             <button class="lang-btn" id="btn-en">EN</button>
+            <button class="lang-btn active" id="btn-tr">TR</button>
+            <button class="lang-btn" id="btn-ar">AR</button>
         </div>
     </div>
 
     <div class="status-badge">
         <div class="dot"></div>
-        <span id="txt-status">Extensión Activa</span>
+        <span id="txt-status">Extension Active and Ready</span>
     </div>
 
     <ul class="steps-list">
-        <li class="step-item" id="txt-step1">Navega a un documento de <strong>Scribd</strong>.</li>
-        <li class="step-item" id="txt-step2">Usa el panel flotante en pantalla.</li>
-        <li class="step-item" id="txt-step3">Selecciona tu método de descarga preferido.</li>
+        <li class="step-item" id="txt-step1">
+            Open any document on <strong>Academia.edu</strong> or <strong>Scribd</strong>.
+        </li>
+        <li class="step-item" id="txt-step2">
+            A <strong>floating panel</strong> will appear on the side. If not, refresh.
+        </li>
+        <li class="step-item" id="txt-step3">
+            Click <strong>'Original PDF'</strong> or try other methods.
+        </li>
     </ul>
 
-    <p class="tip" id="txt-tip"></p>
+    <p class="tip" id="txt-tip">
+        Tip: The panel can be minimized/maximized and dragged anywhere.
+    </p>
 
     <div class="footer">
         <div class="links">
             <a href="https://github.com/abdullah-erturk" target="_blank" class="github-btn">
-                <svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                GitHub Profile
+                <svg viewBox="0 0 16 16" width="20" height="20"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                GitHub
             </a>
             
             <a href="https://buymeacoffee.com/abdullaherturk" target="_blank" class="coffee-btn">
@@ -304,5 +305,4 @@
     <script src="libs/i18n.js"></script>
     <script src="popup.js"></script>
 </body>
-
 </html>
