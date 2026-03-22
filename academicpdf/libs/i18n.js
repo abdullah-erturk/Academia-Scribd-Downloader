@@ -87,6 +87,7 @@ const I18n = {
             error_timeout: { title: "Request Timed Out", desc: "The external server did not respond. Try again in a few minutes." }
         }
     },
+
     tr: {
         popup: {
             title: "Academia & Scribd",
@@ -160,6 +161,89 @@ const I18n = {
                 help: "<b>İndirme Başarısız:</b><br/>Orijinal PDF dosyası harici sunucuda mevcut değil veya bozuk. <br/><br/>👉 <b>Çözüm:</b> Bu sekmeyi kapatın ve eklenti panelindeki diğer kaydetme yöntemlerinden birini kullanın. Bu alternatif yöntemler neredeyse tüm dokümanlarda çalışır."
             },
             error_timeout: { title: "İstek Zaman Aşımına Uğradı", desc: "Harici sunucu yanıt vermedi. Birkaç dakika sonra tekrar deneyin." }
+        }
+    },
+
+    ar: {
+        popup: {
+            title: "أكاديميا و سكريبد",
+            subtitle: "مجموعة التنزيل الأكاديمي",
+            status: "الإضافة نشطة وجاهزة",
+            how_to: "كيفية الاستخدام",
+            step1: "افتح أي مستند على <strong>Academia.edu</strong> أو <strong>Scribd</strong>.",
+            step2: "سيظهر <strong>لوحة عائمة</strong> على الجانب. إذا لم تظهر، قم بتحديث الصفحة.",
+            step3: "انقر على <strong>'PDF الأصلي'</strong> لحفظ الملف أو جرب طرق التنزيل الأخرى.",
+            tip: "نصيحة: أثناء فتح صفحات أكاديميا وسكريبد، يمكن تصغير/تكبير اللوحة من الرأس وسحبها إلى أي مكان في الصفحة.",
+            footer: ""
+        },
+        overlay: {
+            title: "⚡ تنزيل سكريبد",
+            title_academia: "🎓 تنزيل أكاديميا",
+            id: "معرف المستند:",
+            file: "الملف:",
+            pages: "الصفحات:",
+            analyzing: "جاري عد الصفحات...",
+            scroll_notice: "تأكد من تحميل جميع الصفحات",
+            activate: "▶ تفعيل وضع التنزيل",
+            // Academia specific
+            download_pdf: "PDF الأصلي",
+            fetching_meta: "جاري جلب التفاصيل...",
+            // Main button: page-by-page screenshot scan
+            hq_btn: "مسح ذكي (جودة عالية)",
+            hq_badge: "آمن",
+            hq_tooltip: "مسح عالي الجودة باستخدام الصور الأصلية إن أمكن (جودة أصلية) أو لقطات الشاشة. يُوصى به للتخطيطات القياسية.",
+            hq_native_btn: "جودة أصلية",
+            hq_native_sub: "استخراج الصور الأصلية",
+            hq_native_badge: "آمن",
+            hq_native_tooltip: "يحاول تنزيل الصور عالية الدقة الأصلية من الخادم. أفضل جودة ووضوح.",
+            hq_fit_btn: "وضع الماسح الضوئي",
+            hq_fit_sub: "محرك الالتقاط المقسم",
+            hq_fit_badge: "موصى به",
+            hq_fit_tooltip: "التقاط متصفح أصلي عن طريق التمرير/الربط. يصلح مشاكل النصوص المفقودة والضبابية.",
+            // Advanced options section
+            adv_opts: "خيارات متقدمة",
+            // Secondary button: original PDF extraction
+            vec_btn: "PDF الأصلي",
+            vec_badge: "API",
+            vec_tooltip: "يحاول تنزيل ملف PDF الأصلي من خوادم خارجية. أسرع، لكنه قد يفشل إذا لم يعرض الخادم الملف. في حال الفشل، استخدم إحدى طرق الحفظ الأخرى.",
+            // Warning for documents with many pages
+            large_doc_warning: "⚠️ تم اكتشاف مستند كبير ({pages} صفحات). المسح عالي الجودة سيولد ملفات متعددة ويستغرق ساعات. يُوصى 100%: استخدم \"PDF الأصلي\".",
+            // Mini-warning shown when clicking HQ Scan on large document
+            hq_long_warning: "⏱ هذه العملية ستستغرق وقتًا طويلًا. يرجى الإبقاء على هذه التبويبة مفتوحة.",
+            // Dynamic button states during the process
+            states: {
+                loading: "جاري تجهيز المسح...",
+                fetching: "جاري تنزيل PDF أكاديميا...",
+                polling: "جاري الانتظار للخادم...",
+                saving: "جاري إنشاء PDF...",
+                success: "تم حفظ PDF!",
+                error: "خطأ: "
+            },
+            // Specific error messages
+            errors: {
+                pdf_lib: "أعد تحميل الصفحة (F5) وحاول مرة أخرى.",
+                no_pages: "لم يتم العثور على صفحات. هل أنت في مستند سكريبد؟",
+                capture: "خطأ في الالتقاط. تحقق من أذونات الإضافة.",
+                academia_failed: "فشل التنزيل من أكاديميا."
+            },
+            feedback_pause: "⚠️ احتفظ بهذه التبويبة مفتوحة",
+            feedback_desc: "يمكنك استخدام جهازك أو تغيير النوافذ، فقط لا تغلق هذه التبويبة حتى تنتهي العملية."
+        },
+        toast: {
+            init: { title: "جاري البدء", desc: "جاري الاتصال بالخادم..." },
+            verify: { title: "التحقق الأمني", desc: "جاري حل حماية Cloudflare..." },
+            verify_done: { title: "اكتمل التحقق", desc: "جاري الوصول إلى المستند..." },
+            wait: { title: "جاري إنشاء رابط التنزيل", desc: "جاري المزامنة مع الخادم الخارجي..." },
+            redirect: { title: "جاري إعادة التوجيه", desc: "جاري الدخول إلى مرحلة التنزيل النهائية..." },
+            analyzing: { title: "جاري تحليل المستند", desc: "جاري تحديد تدفق بيانات PDF..." },
+            validating: { title: "جاري التحقق من السلامة", desc: "جاري فحص حجم الملف والصيغة..." },
+            success: { title: "تم التحقق من المستند!", desc: "بدأ التنزيل." },
+            error_damaged: {
+                title: "الملف غير متاح",
+                desc: "ملف PDF الأصلي فارغ أو تالف.",
+                help: "<b>فشل التنزيل:</b><br/>ملف PDF الأصلي غير متاح أو تالف على الخادم الخارجي.<br/><br/>👉 <b>الحل:</b> أغلق هذه التبويبة واستخدم إحدى طرق الحفظ الأخرى في لوحة الإضافة. هذه الطرق البديلة تعمل على معظم المستندات."
+            },
+            error_timeout: { title: "انتهت مهلة الطلب", desc: "لم يستجب الخادم الخارجي. حاول مرة أخرى بعد بضع دقائق." }
         }
     }
 };
