@@ -2,7 +2,7 @@
 
 <a href="https://buymeacoffee.com/abdullaherturk" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-# 🖥️ Academia & Scribd Downloader 🚀
+# 🖥️ Academia & Scribd Downloader v2🚀
 
 ![Platform](https://img.shields.io/badge/Platform-Chrome%20%7C%20Edge-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)
 ![Tech](https://img.shields.io/badge/Tech-JavaScript%20%26%20CSS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
