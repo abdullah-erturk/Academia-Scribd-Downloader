@@ -114,7 +114,7 @@ Optimized with distinct labeling for better usability:
 
 Made with ❤️ by [Abdullah ERTÜRK](https://github.com/abdullah-erturk)
 
-[🌐 erturk.netlify.app](https://erturk.netlify.app)  
+[🌐 erturk-dev.netlify.app](https://erturk-dev.netlify.app)  
   
 Arabic translation & localization by [HasanMajhali](https://github.com/HasanMajhali)
 
