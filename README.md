@@ -32,7 +32,7 @@ This extension is a professional tool for Chrome and Edge browsers. It is design
 ## Download Link:
 [![Stable?](https://img.shields.io/badge/Release-v2.0-green.svg?style=flat)](https://github.com/abdullah-erturk/Academia-Scribd-Downloader/archive/refs/heads/main.zip)
 
-<details open>
+<details>
 <summary><strong>Türkçe Tanıtım</strong></summary>
 
 ### Temel Özellikler
